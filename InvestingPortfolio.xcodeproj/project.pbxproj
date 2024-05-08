@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		7D8DD4942BEBD31500B6EAB3 /* InvestingPortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DD4932BEBD31500B6EAB3 /* InvestingPortfolioApp.swift */; };
-		7D8DD4962BEBD31500B6EAB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DD4952BEBD31500B6EAB3 /* ContentView.swift */; };
 		7D8DD4982BEBD31600B6EAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D8DD4972BEBD31600B6EAB3 /* Assets.xcassets */; };
 		7D8DD49B2BEBD31600B6EAB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D8DD49A2BEBD31600B6EAB3 /* Preview Assets.xcassets */; };
+		7D8DD4A22BEBD36100B6EAB3 /* Investment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DD4A12BEBD36100B6EAB3 /* Investment.swift */; };
+		7D8DD4A42BEBD39100B6EAB3 /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DD4A32BEBD39100B6EAB3 /* PortfolioViewModel.swift */; };
+		7D8DD4A62BEBD3AE00B6EAB3 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DD4A52BEBD3AE00B6EAB3 /* PortfolioView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D8DD4902BEBD31500B6EAB3 /* InvestingPortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InvestingPortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D8DD4932BEBD31500B6EAB3 /* InvestingPortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestingPortfolioApp.swift; sourceTree = "<group>"; };
-		7D8DD4952BEBD31500B6EAB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7D8DD4972BEBD31600B6EAB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D8DD49A2BEBD31600B6EAB3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7D8DD4A12BEBD36100B6EAB3 /* Investment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investment.swift; sourceTree = "<group>"; };
+		7D8DD4A32BEBD39100B6EAB3 /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
+		7D8DD4A52BEBD3AE00B6EAB3 /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				7D8DD4932BEBD31500B6EAB3 /* InvestingPortfolioApp.swift */,
-				7D8DD4952BEBD31500B6EAB3 /* ContentView.swift */,
+				7D8DD4A12BEBD36100B6EAB3 /* Investment.swift */,
+				7D8DD4A52BEBD3AE00B6EAB3 /* PortfolioView.swift */,
+				7D8DD4A32BEBD39100B6EAB3 /* PortfolioViewModel.swift */,
 				7D8DD4972BEBD31600B6EAB3 /* Assets.xcassets */,
 				7D8DD4992BEBD31600B6EAB3 /* Preview Content */,
 			);
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D8DD4962BEBD31500B6EAB3 /* ContentView.swift in Sources */,
+				7D8DD4A62BEBD3AE00B6EAB3 /* PortfolioView.swift in Sources */,
+				7D8DD4A42BEBD39100B6EAB3 /* PortfolioViewModel.swift in Sources */,
+				7D8DD4A22BEBD36100B6EAB3 /* Investment.swift in Sources */,
 				7D8DD4942BEBD31500B6EAB3 /* InvestingPortfolioApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
