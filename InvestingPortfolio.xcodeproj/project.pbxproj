@@ -13,6 +13,8 @@
 		7D8DD4A22BEBD36100B6EAB3 /* Investment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DD4A12BEBD36100B6EAB3 /* Investment.swift */; };
 		7D8DD4A42BEBD39100B6EAB3 /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DD4A32BEBD39100B6EAB3 /* PortfolioViewModel.swift */; };
 		7D8DD4A62BEBD3AE00B6EAB3 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DD4A52BEBD3AE00B6EAB3 /* PortfolioView.swift */; };
+		7DB1C5172BEC580000CEB03C /* SwiftYFinance in Frameworks */ = {isa = PBXBuildFile; productRef = 7DB1C5162BEC580000CEB03C /* SwiftYFinance */; };
+		7DB1C5192BEC5A8600CEB03C /* PortfolioSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB1C5182BEC5A8600CEB03C /* PortfolioSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,7 @@
 		7D8DD4A12BEBD36100B6EAB3 /* Investment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investment.swift; sourceTree = "<group>"; };
 		7D8DD4A32BEBD39100B6EAB3 /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
 		7D8DD4A52BEBD3AE00B6EAB3 /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
+		7DB1C5182BEC5A8600CEB03C /* PortfolioSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DB1C5172BEC580000CEB03C /* SwiftYFinance in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +63,7 @@
 				7D8DD4A12BEBD36100B6EAB3 /* Investment.swift */,
 				7D8DD4A52BEBD3AE00B6EAB3 /* PortfolioView.swift */,
 				7D8DD4A32BEBD39100B6EAB3 /* PortfolioViewModel.swift */,
+				7DB1C5182BEC5A8600CEB03C /* PortfolioSearchView.swift */,
 				7D8DD4972BEBD31600B6EAB3 /* Assets.xcassets */,
 				7D8DD4992BEBD31600B6EAB3 /* Preview Content */,
 			);
@@ -89,6 +94,9 @@
 			dependencies = (
 			);
 			name = InvestingPortfolio;
+			packageProductDependencies = (
+				7DB1C5162BEC580000CEB03C /* SwiftYFinance */,
+			);
 			productName = InvestingPortfolio;
 			productReference = 7D8DD4902BEBD31500B6EAB3 /* InvestingPortfolio.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 7D8DD4872BEBD31500B6EAB3;
+			packageReferences = (
+				7DB1C5152BEC580000CEB03C /* XCRemoteSwiftPackageReference "SwiftYFinance" */,
+			);
 			productRefGroup = 7D8DD4912BEBD31500B6EAB3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -147,6 +158,7 @@
 				7D8DD4A42BEBD39100B6EAB3 /* PortfolioViewModel.swift in Sources */,
 				7D8DD4A22BEBD36100B6EAB3 /* Investment.swift in Sources */,
 				7D8DD4942BEBD31500B6EAB3 /* InvestingPortfolioApp.swift in Sources */,
+				7DB1C5192BEC5A8600CEB03C /* PortfolioSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +362,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7DB1C5152BEC580000CEB03C /* XCRemoteSwiftPackageReference "SwiftYFinance" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AlexRoar/SwiftYFinance";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7DB1C5162BEC580000CEB03C /* SwiftYFinance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DB1C5152BEC580000CEB03C /* XCRemoteSwiftPackageReference "SwiftYFinance" */;
+			productName = SwiftYFinance;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7D8DD4882BEBD31500B6EAB3 /* Project object */;
 }

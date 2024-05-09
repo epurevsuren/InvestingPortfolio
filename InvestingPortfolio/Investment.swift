@@ -10,6 +10,7 @@ struct Investment: Identifiable, Codable {
     var id: UUID = UUID()
     var ticker: String
     var companyName: String
-    var price: Double
+    var price: Float
+    var previousClose: Float
     var change: Double // Today's change in price
 }
