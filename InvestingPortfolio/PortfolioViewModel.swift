@@ -14,13 +14,15 @@ class PortfolioViewModel: ObservableObject {
     @Published var investments: [Investment] = []
     @Published var searchResults: [YFQuoteSearchResult] = []
     private var cancellables: Set<AnyCancellable> = []
+    private var dataRefreshTimer: AnyCancellable?
 
     init() {
         loadInvestments()
+        setupDataRefreshTimer()
     }
 
     func loadInvestments() {
-        let initialTickers = ["AMC", "ACHR", "SPCE", "QS", "QSI", "AUDUSD=X"]  // Define your initial list of tickers
+        let initialTickers = ["AMC", "ACHR", "SPCE", "QS", "QSI", "AUDUSD=X", "BTC-USD"]  // Define your initial list of tickers
                 for ticker in initialTickers {
                     addInvestment(ticker: ticker)
                 }
@@ -81,6 +83,26 @@ class PortfolioViewModel: ObservableObject {
             }
         }
 
+    private func fetchRecentData(ticker: String) {
+        SwiftYFinance.recentDataBy(identifier: ticker) { [weak self] data, error in
+            DispatchQueue.main.async {
+                if let data = data, let index = self?.investments.firstIndex(where: { $0.ticker == ticker }) {
+                    let marketPrice = Float(data.regularMarketPrice ?? 0)
+                    let previousClose = Float(data.previousClose ?? 0)
+                    let change = previousClose != 0 ? Double((marketPrice - previousClose) / previousClose * 100) : 0.0
+
+                    // Update the investment with new data
+                    self?.investments[index].price = marketPrice
+                    self?.investments[index].previousClose = previousClose
+                    self?.investments[index].change = change
+                } else if let error = error {
+                    print("Error fetching recent market data: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+
+
     // Fetch stock data and calculate change
         private func fetchStockData(ticker: String, companyName: String) {
             SwiftYFinance.recentDataBy(identifier: ticker) { [weak self] data, error in
@@ -105,6 +127,24 @@ class PortfolioViewModel: ObservableObject {
             }
         }
 
+    private func setupDataRefreshTimer() {
+            dataRefreshTimer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
+                .sink { [weak self] _ in
+                    self?.refreshInvestments()
+                }
+        }
+
+        private func refreshInvestments() {
+            for investment in investments {
+                fetchRealTimeData(for: investment.ticker)
+            }
+        }
+
+        func fetchRealTimeData(for ticker: String) {
+            // Assume you refactor the fetchRecentData to just fetch and update the specific investment
+            fetchRecentData(ticker: ticker)
+        }
+
     func removeInvestment(at offsets: IndexSet) {
         investments.remove(atOffsets: offsets)
         saveInvestments()
@@ -114,8 +154,4 @@ class PortfolioViewModel: ObservableObject {
         // Save to UserDefaults or CoreData
     }
 
-    func fetchRealTimeData() {
-        // Use Combine to fetch data from Yahoo Finance API
-        // This is a placeholder for the actual API call logic
-    }
 }
