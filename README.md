@@ -23,8 +23,8 @@ To use the app:
 
 Technologies Used
 - Yahoo Finance API: This is used to fetch real-time stock prices and market data.
-- **SwiftYFinance package dependency**:
-1. File → Swift Packages → Add Package Dependency.
+- **Package dependency**:
+1. File → Add Package Dependency.
 2. URL: `https://github.com/alexdremov/SwiftYFinance`
 3. Select Target, then Resolve.
 4. Use `import SwiftYFinance` in your Swift files.
