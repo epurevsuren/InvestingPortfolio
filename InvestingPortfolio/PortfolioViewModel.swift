@@ -85,7 +85,7 @@ class PortfolioViewModel: ObservableObject {
     }
 
     func setupDataRefreshTimer() {
-            dataRefreshTimer = Timer.publish(every: 15, on: .main, in: .common).autoconnect()
+            dataRefreshTimer = Timer.publish(every: 15, on: .main, in: .common).autoconnect() // Refresh interval 15 seconds
                 .sink(receiveValue: { [weak self] _ in
                     self?.refreshInvestments()
                 })

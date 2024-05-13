@@ -53,7 +53,7 @@ struct PortfolioView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .focused($isTextFieldFocused)
                         .autocapitalization(.allCharacters)
-                        .disableAutocorrection(true)
+                        .disableAutocorrection(false)
                         .onReceive(Just(isTextFieldFocused), perform: { focused in
                             if focused {
                                 viewModel.stopTimer()
