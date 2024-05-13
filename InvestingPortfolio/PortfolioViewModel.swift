@@ -12,28 +12,32 @@ import SwiftYFinance
 
 class PortfolioViewModel: ObservableObject {
     @Published var investments: [Investment] = []
-    @Published var companyNames: [String: String] = [:] // Dictionary to store company names
+    @Published var companyNames: [String: String] = [:] // Dictionary to store asset names
     @Published var tickers: [String] = [] // List to store tickers
 
     private var dataRefreshTimer: AnyCancellable?
 
     init() {
         loadInitialTickers()
-        setupDataRefreshTimer()
+        startTimer()
+    }
+
+    deinit {
+        stopTimer()
     }
 
     func loadInitialTickers() {
         // Load tickers from UserDefaults or use a default list
         tickers = UserDefaults.standard.array(forKey: "Watchlist") as? [String] ?? ["AAPL", "AUDUSD=X", "BTC-USD"]
         tickers.forEach { ticker in
-            fetchSearchData(ticker: ticker) // Fetch company names for each ticker
+            fetchSearchData(ticker: ticker) // Fetch ticker names for each ticker
         }
     }
 
     func addInvestment(ticker: String) {
         if !tickers.contains(ticker) {
             tickers.append(ticker)
-            fetchSearchData(ticker: ticker) // Fetch company name and create investment
+            fetchSearchData(ticker: ticker) // Fetch ticker name and create investment
             saveTickers()
         }
     }
@@ -80,11 +84,22 @@ class PortfolioViewModel: ObservableObject {
         }
     }
 
-    private func setupDataRefreshTimer() {
-        dataRefreshTimer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
-            .sink { [weak self] _ in
-                self?.refreshInvestments()
-            }
+    func setupDataRefreshTimer() {
+            dataRefreshTimer = Timer.publish(every: 15, on: .main, in: .common).autoconnect()
+                .sink(receiveValue: { [weak self] _ in
+                    self?.refreshInvestments()
+                })
+    }
+
+    func stopTimer() {
+        dataRefreshTimer?.cancel()
+        dataRefreshTimer = nil  // Clear the existing timer reference
+    }
+
+    func startTimer() {
+        if dataRefreshTimer == nil {  // Only start a new timer if there isn't one already
+            setupDataRefreshTimer()
+        }
     }
 
     func refreshInvestments() {

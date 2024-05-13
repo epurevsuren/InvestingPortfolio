@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D57F1132BF1AD290014FFDF /* SummaryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D57F1122BF1AD290014FFDF /* SummaryDetailsView.swift */; };
 		7D8DD4942BEBD31500B6EAB3 /* InvestingPortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DD4932BEBD31500B6EAB3 /* InvestingPortfolioApp.swift */; };
 		7D8DD4982BEBD31600B6EAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D8DD4972BEBD31600B6EAB3 /* Assets.xcassets */; };
 		7D8DD49B2BEBD31600B6EAB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D8DD49A2BEBD31600B6EAB3 /* Preview Assets.xcassets */; };
@@ -15,9 +16,13 @@
 		7D8DD4A62BEBD3AE00B6EAB3 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DD4A52BEBD3AE00B6EAB3 /* PortfolioView.swift */; };
 		7DB1C5172BEC580000CEB03C /* SwiftYFinance in Frameworks */ = {isa = PBXBuildFile; productRef = 7DB1C5162BEC580000CEB03C /* SwiftYFinance */; };
 		7DB1C5192BEC5A8600CEB03C /* PortfolioSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB1C5182BEC5A8600CEB03C /* PortfolioSearchView.swift */; };
+		7DF1E0492BF176D600C7BF50 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF1E0482BF176D600C7BF50 /* LineChartView.swift */; };
+		7DF1E04B2BF1772D00C7BF50 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF1E04A2BF1772D00C7BF50 /* ChartViewModel.swift */; };
+		7DF1E04D2BF1836200C7BF50 /* LineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF1E04C2BF1836200C7BF50 /* LineData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D57F1122BF1AD290014FFDF /* SummaryDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryDetailsView.swift; sourceTree = "<group>"; };
 		7D8DD4902BEBD31500B6EAB3 /* InvestingPortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InvestingPortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D8DD4932BEBD31500B6EAB3 /* InvestingPortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestingPortfolioApp.swift; sourceTree = "<group>"; };
 		7D8DD4972BEBD31600B6EAB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -26,6 +31,9 @@
 		7D8DD4A32BEBD39100B6EAB3 /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
 		7D8DD4A52BEBD3AE00B6EAB3 /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		7DB1C5182BEC5A8600CEB03C /* PortfolioSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioSearchView.swift; sourceTree = "<group>"; };
+		7DF1E0482BF176D600C7BF50 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
+		7DF1E04A2BF1772D00C7BF50 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		7DF1E04C2BF1836200C7BF50 /* LineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +67,15 @@
 		7D8DD4922BEBD31500B6EAB3 /* InvestingPortfolio */ = {
 			isa = PBXGroup;
 			children = (
+				7DF1E04A2BF1772D00C7BF50 /* ChartViewModel.swift */,
 				7D8DD4932BEBD31500B6EAB3 /* InvestingPortfolioApp.swift */,
 				7D8DD4A12BEBD36100B6EAB3 /* Investment.swift */,
+				7DF1E04C2BF1836200C7BF50 /* LineData.swift */,
+				7DF1E0482BF176D600C7BF50 /* LineChartView.swift */,
 				7D8DD4A52BEBD3AE00B6EAB3 /* PortfolioView.swift */,
 				7D8DD4A32BEBD39100B6EAB3 /* PortfolioViewModel.swift */,
 				7DB1C5182BEC5A8600CEB03C /* PortfolioSearchView.swift */,
+				7D57F1122BF1AD290014FFDF /* SummaryDetailsView.swift */,
 				7D8DD4972BEBD31600B6EAB3 /* Assets.xcassets */,
 				7D8DD4992BEBD31600B6EAB3 /* Preview Content */,
 			);
@@ -155,8 +167,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D8DD4A62BEBD3AE00B6EAB3 /* PortfolioView.swift in Sources */,
+				7DF1E04D2BF1836200C7BF50 /* LineData.swift in Sources */,
 				7D8DD4A42BEBD39100B6EAB3 /* PortfolioViewModel.swift in Sources */,
+				7DF1E0492BF176D600C7BF50 /* LineChartView.swift in Sources */,
 				7D8DD4A22BEBD36100B6EAB3 /* Investment.swift in Sources */,
+				7D57F1132BF1AD290014FFDF /* SummaryDetailsView.swift in Sources */,
+				7DF1E04B2BF1772D00C7BF50 /* ChartViewModel.swift in Sources */,
 				7D8DD4942BEBD31500B6EAB3 /* InvestingPortfolioApp.swift in Sources */,
 				7DB1C5192BEC5A8600CEB03C /* PortfolioSearchView.swift in Sources */,
 			);
