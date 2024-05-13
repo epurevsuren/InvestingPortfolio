@@ -21,6 +21,8 @@ To use the app:
 2. View Data: The app displays real-time data and potential investment outcomes.
 3. Make Decisions: Users can make investment decisions directly within the app based on the provided data and signals.
 
+(**Current project GitHub URL**: `https://github.com/epurevsuren/InvestingPortfolio`)
+
 Technologies Used
 - Yahoo Finance API: This is used to fetch real-time stock prices and market data.
 - **Package dependency**:
@@ -39,7 +41,7 @@ Data Management: The most significant challenge was designing efficient data str
 Achieving MVP with Iterative Design
 Our development process followed the Software Development Life Cycle (SDLC) with iterative planning and feedback loops, allowing us to refine features continuously and ensure the app meets user needs effectively.
 
-Code Quality (Project GitHub URL: `https://github.com/epurevsuren/InvestingPortfolio`)
+**Code Quality**
 
 Data Modeling
 - Our data models are designed to reflect the financial market's structures accurately, enabling intuitive interaction with financial data.
