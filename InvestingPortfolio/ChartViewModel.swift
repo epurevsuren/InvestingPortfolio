@@ -16,7 +16,7 @@ class StockChartViewModel: ObservableObject {
 
     func loadChartData(for identifier: String) {
         isLoading = true
-        let startDate = Calendar.current.date(byAdding: .month, value: -6, to: Date())!
+        let startDate = Calendar.current.date(byAdding: .month, value: -6, to: Date())! //Last 6 months
         let endDate = Date()
 
         SwiftYFinance.chartDataBy(

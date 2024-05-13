@@ -94,11 +94,13 @@ class PortfolioViewModel: ObservableObject {
     func stopTimer() {
         dataRefreshTimer?.cancel()
         dataRefreshTimer = nil  // Clear the existing timer reference
+        print("Timer Stopped!")
     }
 
     func startTimer() {
         if dataRefreshTimer == nil {  // Only start a new timer if there isn't one already
             setupDataRefreshTimer()
+            print("Timer Started!")
         }
     }
 
